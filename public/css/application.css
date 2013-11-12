@@ -1,9 +1,35 @@
-.container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+#wrapper {
+	width: 90%;
+	margin: 0 auto;
+	min-height: 600px;
 }
-th {
-  text-align: left;
+
+#left-col {
+	border: 1px solid;
+	width: 49%;
+	height: 600px;
+	overflow:scroll;
+	float: left;
+}
+
+#right-col {
+	border: 1px solid;
+	width: 50%;
+	height: 600px;
+	overflow:scroll;
+	float: left;
+}
+
+#footer {
+	border-bottom: 1px solid;
+	border-left: 1px solid;
+	border-right: 1px solid;
+	padding: 10px;
+	margin-right: 9px;
+	clear: both;
+}
+
+.header {
+	border-bottom: 1px solid;
+	padding: 10px;
 }

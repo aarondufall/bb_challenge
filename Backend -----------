@@ -1,0 +1,55 @@
+Backend -----------
+
+
+1.
+
+picture of schema
+http://postimg.org/image/omjz391e9/
+
+students
+- Has many goals
+	A student can have more than on goals, but each students goals are unique.
+
+- Has many assignments through homework
+	A student can have homework assgined to them from a list of assignments based on there individual goals.
+
+homework(Join Table)
+- belongs to student
+- belongs to assigments
+	Assigments can be reused more than once for each student.
+
+assignments
+- Has many assginment_skills(Join Table)
+	Reusable list of assignments.
+
+assignment_skills(Join Table)
+- belongs to skill
+- belongs to assgiment
+	An assignment can help you improve more than one skill
+
+skills
+- has many assigments through assignment_skills
+- has many goals through achivments
+	Reusable list of skills.
+
+achivements(Join Table)
+- belongs to skill
+- belongs to goals
+	One goal can work towards more than one skill, but skill can also apply to more than one students goals
+
+goals
+- belongs to student
+- has_many skills through achivements
+	A student can have many goals that improve many skills.
+
+	An alternative choice would be have a goal belong to a skill and a skill can have many goals, but that would mean that a goal only works towards a single skill and if that where the case I think I would be easier to just assign skill directly to students.
+
+
+
+	2.
+
+	a. SELECT user_table.name, email_table.email FROM user_table LEFT OUTER JOIN email_table ON user_table.id = email_table.user_id
+
+	b.  SELECT user_table.name, email_table.email FROM user_table INNER JOIN email_table ON user_table.id = email_table.user_id
+
+	c. SELECT user_table.name, email_table.email FROM user_table LEFT OUTER JOIN email_table ON user_table.id = email_table.user_id WHERE email_table.email IS NULL
